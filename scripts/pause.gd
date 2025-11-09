@@ -16,3 +16,13 @@ func _input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			get_tree().paused = false
 			hide()
+	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+		if not is_visible_in_tree():
+			get_tree().paused = true
+			show()
+
+
+func _on_button_pressed() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	get_tree().paused = false
+	hide()

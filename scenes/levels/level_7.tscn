@@ -792,6 +792,7 @@ material_override = SubResource("StandardMaterial3D_j0hcr")
 material_override = ExtResource("28_61ant")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Tv"]
+playback_type = 1
 
 [node name="antlines-c4" parent="." instance=ExtResource("10_cbgmi")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7, 0, 3)

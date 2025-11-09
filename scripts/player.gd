@@ -101,7 +101,7 @@ func _process(delta: float) -> void:
 	var blend = lvel.length()
 	blend = remap(clampf(blend, 0, 5), 0, 5, 0, 1)
 	animtree["parameters/blend_position"] = blend
-	
+
 	if Input.is_action_just_pressed("restart"):
 		MusicHandler.set_mus_live()
 		get_tree().reload_current_scene.call_deferred()
@@ -109,7 +109,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	var air_vel:float = 0.0
-	
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -151,11 +151,11 @@ func _physics_process(delta: float) -> void:
 			if rbody is RigidBody3D:
 				if rbody.is_in_group(&"pushable"):
 					rbody.apply_force(col.get_normal() * -FORCE)
-	
+
 	if is_on_floor() and air_vel <= FALL_KILL_THRESHOLD:
 		print("Eggbert hit the ground too hard")
 		die()
-	
+
 	if dead and g_radius:
 		var r_home:Vector3 = g_radius.position
 		r_home.y = position.y
@@ -165,7 +165,7 @@ func _physics_process(delta: float) -> void:
 
 		if Input.is_action_just_pressed("revive"):
 			revive()
-	
+
 	if i_time > 0.0:
 		i_time -= delta
 		if i_time <= 0.0:

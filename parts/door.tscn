@@ -805,3 +805,4 @@ libraries = {
 stream = ExtResource("6_i6grq")
 volume_db = -10.0
 max_polyphony = 10
+playback_type = 1

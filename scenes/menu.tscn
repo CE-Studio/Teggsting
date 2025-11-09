@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dk6m416bxsdm4"]
+[gd_scene load_steps=39 format=3 uid="uid://dk6m416bxsdm4"]
 
 [ext_resource type="Material" uid="uid://dl7fbxot1sjwy" path="res://textures/mat/floor.tres" id="1_4ytvr"]
 [ext_resource type="Material" uid="uid://cxhfxnk1s24tq" path="res://textures/mat/wall2.tres" id="2_g3eks"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ryfdps7usrvn" path="res://textures/Menu/Play.png" id="6_i6lef"]
 [ext_resource type="Texture2D" uid="uid://cauptjxf04ev8" path="res://textures/Menu/Intro3.png" id="8_70i5f"]
 [ext_resource type="PackedScene" uid="uid://b66x15e8xjipt" path="res://scenes/options_panel.tscn" id="8_mj5lg"]
+[ext_resource type="Texture2D" uid="uid://c0bebuogtel0y" path="res://testdpi.tres" id="9_48ryc"]
 [ext_resource type="Texture2D" uid="uid://ogsqbs500kwi" path="res://textures/Menu/intro2.svg" id="10_ufwb2"]
 [ext_resource type="Texture2D" uid="uid://drii6h0j3v0d6" path="res://textures/Menu/intro2a.png" id="11_6cdou"]
 [ext_resource type="Texture2D" uid="uid://b6kwbquh0rq7r" path="res://textures/Menu/Title.png" id="13_6cdou"]
@@ -66,6 +67,20 @@ _data = {
 &"CamSpin": SubResource("Animation_4ytvr"),
 &"RESET": SubResource("Animation_g3eks")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhsb5"]
+bg_color = Color(0.9826463, 0.0010131764, 0.00055619894, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.7529412, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
 
 [sub_resource type="Animation" id="Animation_v86rl"]
 resource_name = "Intro"
@@ -134,34 +149,10 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Control/Title:position")
+tracks/5/path = NodePath("Control/Title:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(256, 0), Vector2(256, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Control/Title:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(1, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Control/Title:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0, 12.5, 13),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
@@ -233,34 +224,10 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Control/Title:position")
+tracks/5/path = NodePath("Control/Title:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(256, 0)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Control/Title:scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Control/Title:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -562,6 +529,65 @@ offset_bottom = 12.0
 grow_vertical = 0
 text = "© CE-Studo, Lasagna Bones, 2025 (GNU AGPL v3)"
 uri = "https://www.gnu.org/licenses/agpl-3.0.en.html#license-text"
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/ButtonLayer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.5
+offset_top = 22.0
+offset_right = 171.5
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vhsb5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/ButtonLayer/PanelContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Control/ButtonLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/ButtonLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_48ryc")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ButtonLayer/PanelContainer/HBoxContainer/TextureRect"]
+modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 30.0
+offset_bottom = 30.0
+scale = Vector2(1.12, 1.12)
+texture = ExtResource("9_48ryc")
+stretch_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control/ButtonLayer/PanelContainer/HBoxContainer/TextureRect"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 19.0
+offset_bottom = 27.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="RichTextLabel" parent="Control/ButtonLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[b]Warning! Web build is experimental![/b] "
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 0
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1

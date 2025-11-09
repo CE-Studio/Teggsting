@@ -497,6 +497,7 @@ material_override = SubResource("StandardMaterial3D_aq0d2")
 material_override = ExtResource("28_61ant")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Tv"]
+playback_type = 1
 
 [node name="TransitionTrigger" parent="." instance=ExtResource("17_gf2l7")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 8, 7, -11)

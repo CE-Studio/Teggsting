@@ -15,8 +15,8 @@ func press():
 	for i in connections:
 		if i.has_method("connectionOn"):
 			i.connectionOn()
-			
-			
+
+
 func unpress():
 	for i in connections:
 		if i.has_method("connectionOff"):

@@ -10,8 +10,10 @@ script = ExtResource("1_r8afn")
 stream = ExtResource("1_s6e27")
 autoplay = true
 bus = &"Music"
+playback_type = 1
 
 [node name="Dead" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_s6e27")
 autoplay = true
 bus = &"Music2"
+playback_type = 1

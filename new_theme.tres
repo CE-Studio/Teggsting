@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://d1vwhkv0ljp6x"]
+
+[ext_resource type="Texture2D" uid="uid://c0bebuogtel0y" path="res://testdpi.tres" id="1_amlv4"]
+
+[resource]
+FileDialog/icons/favorite_down = ExtResource("1_amlv4")
